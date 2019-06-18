@@ -4,8 +4,11 @@ const mongoose = require("mongoose");
 
 const flash = require('connect-flash');
 const session = require("express-session");
+const passport = require('passport');
 
 const app = express();
+require('./config/passport')(passport);
+
 // EJS
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
@@ -17,6 +20,10 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(flash());
 
