@@ -8,6 +8,8 @@ const mongoose = require("mongoose");
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
+app.use(express.urlencoded({extended: true}));
+
 const db = require("./config/keys").mongoURI;
 mongoose.connect(db, { useNewUrlParser: true})
     .then( () => console.log('MongoDB Connected...'))

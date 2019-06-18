@@ -11,4 +11,10 @@ router.get('/register', (req, res) => {
     res.render('register');
 });
 
+// register hand
+router.post('/register', (req, res) => {
+    res.send('hello');
+    console.log(req.body);
+});
+
 module.exports = router;
