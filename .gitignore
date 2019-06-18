@@ -88,4 +88,4 @@ typings/
 .dynamodb/
 
 # git에 안올라감
-config
+config/keys.js
